@@ -1,1 +1,1 @@
-# The100DaysOfCodingChallenge
+# The100DaysOfCodingChallenge - log
