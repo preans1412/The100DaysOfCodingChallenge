@@ -1,0 +1,28 @@
+2405. Optimal Partition of String
+https://leetcode.com/problems/optimal-partition-of-string/
+
+
+
+
+class Solution {
+public:
+    int partitionString(string s)
+    {
+       // int n=s.size();
+       int ans=1;
+       map <char,int> m;
+       for(auto i: s)
+       {
+           if(m[i]>0)
+           {
+               m.clear();
+               ans++;
+               m[i]++;
+           }
+           else{
+               m[i]++;
+           }
+       }     
+       return ans;
+    }
+};
