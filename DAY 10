@@ -1,0 +1,54 @@
+1436. Destination City
+1528. Shuffle String
+
+
+https://leetcode.com/problems/destination-city/description/
+
+
+class Solution {
+public:
+    string destCity(vector<vector<string>>& paths) 
+    {
+
+      set <string> s;
+      for(int i=0;i<paths.size();i++)
+       {
+            s.insert(paths[i][1]);
+       }
+
+      for(int i = 0; i < paths.size(); i++)
+		   {
+			    if(s.count(paths[i][0])  >0)
+          s.erase(paths[i][0]);
+		    }
+
+      for(string st: s)  
+       {
+         return st;
+       }  
+        
+         return "";
+
+    }
+};
+
+
+
+https://leetcode.com/problems/shuffle-string/description/
+
+
+
+class Solution {
+public:
+    string restoreString(string s, vector<int>& indices) 
+    {
+
+           string str = s;          
+           for(int i=0;i<indices.size();i++)
+           {
+               int n= indices[i];
+               str[n]= s[i];
+           }
+           return str;   
+    }
+};
