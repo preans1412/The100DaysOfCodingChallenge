@@ -1,0 +1,32 @@
+https://leetcode.com/problems/jewels-and-stones/description/
+
+771. Jewels and Stones
+
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) 
+    {
+
+// USING SET
+    int count =0;
+       set<int> s;
+       for(auto i: jewels){
+           s.insert(i);
+       }
+       for(auto j: stones) {
+           if(s.count(j))
+             count++;
+       }
+       return count;
+
+// ITERTAIVE WAY
+/*   int count=0;
+   for(int i=0;i<jewels.length();i++){
+       for(int j=0;j<stones.length();j++) {
+           if(jewels[i]==stones[j]){
+               count++;
+           }}}
+    return count;
+*/  
+    }
+};
