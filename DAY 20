@@ -1,0 +1,32 @@
+Day 20 of #100daysofcodechallenge
+Easy ✅
+145. Binary Tree Postorder Traversal
+Link for the Question - https://lnkd.in/d8cxtXA8
+
+
+
+class Solution {
+public:
+vector<int> v;
+    vector<int> postorderTraversal(TreeNode* root)
+     {
+        postorder(root);
+        return v;
+    }
+    void postorder(TreeNode* root)
+    {
+    if(root== NULL){return;}
+        postorder(root->left);
+        postorder(root->right);
+        v.push_back(root->val);
+    }
+    
+};
+
+
+ // if(root==nullptr){return;}
+
+       //while(root!=NULL)  // we can't use while bcz root is pointer type and NULL is comparable to ineter type only.
+       
+           // cout<<root->val;   // we can't use cout here so what to use.
+           //as we are using vector so, we will pushback the root element dirctly into it;
