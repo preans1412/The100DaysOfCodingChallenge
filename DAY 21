@@ -1,0 +1,51 @@
+Day 21 of #100daysofcodechallenge
+
+Medium 🔶 
+
+53. Maximum Subarray
+
+Link for the Question - https://leetcode.com/problems/maximum-subarray/
+
+GitHub: https://lnkd.in/d6JZGn6P
+
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums)
+     {
+       int sum=0;
+       int maxi=nums[0];
+       for(int i=0;i<nums.size();i++)
+       {
+           sum=sum+nums[i];
+           maxi=max(sum,maxi);
+           if(sum<0)
+           sum=0;
+       }   
+       return maxi; 
+    }
+};
+
+
+
+
+JAVA 
+
+class Solution {
+    public int maxSubArray(int[] nums)
+     {
+         int sum=0;
+         int n=nums.length;
+       int maxi=Integer.MIN_VALUE;
+       for(int i=0;i<n;i++)
+       {
+           sum=sum+nums[i];
+            if (sum > maxi) {
+            maxi = sum;
+            }
+           if(sum<0)
+           sum=0;
+       }   
+       return maxi; 
+    }
+}
