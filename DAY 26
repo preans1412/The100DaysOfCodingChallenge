@@ -1,0 +1,40 @@
+Day 26 of #100daysofcodechallenge
+Remove Element
+Link for the Question - https://lnkd.in/dcTUvdyg
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+   
+       while(n--)
+        {
+            
+        int m,k;
+      
+        cin>>m>>k;
+            int arr[m];
+            
+            for(int i=0;i<m;i++)
+            {
+              cin>>arr[i];
+            }
+             if(m==1)
+            cout << "YES" << endl;
+            else
+            {
+                sort(arr, arr + m);
+                if(arr[0]+arr[m-1]<=k)
+                cout << "YES" << endl;
+                else
+                cout << "NO" << endl;
+                
+            }
+        }
+    
+
+}
