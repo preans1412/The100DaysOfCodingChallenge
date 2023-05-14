@@ -1,0 +1,128 @@
+Day 28 of #100daysofcodechallenge
+Easy ✅
+21. Merge Two Sorted Lists
+Link for the Question - https://lnkd.in/dSQD4FeD
+Link for the solution - https://lnkd.in/dhEdE5QM
+GitHub: https://lnkd.in/d6JZGn6P
+
+
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) 
+    {
+        // make another list l3
+        ListNode *l3 = new ListNode();   
+        // store it in temp so as to further change
+        ListNode *temp= l3;
+
+       // till the list doesn't reaches NULL
+      while(l1 && l2)  
+      {                                
+        if(l1->val < l2->val)
+        {
+            temp->next = l1;
+            l1=l1->next;
+        }
+        else
+        {
+            temp->next=l2;
+            l2=l2->next;
+        }
+        temp=temp->next;
+        
+    }
+      //if l2 or l1  is null then it means the other list is answer
+      if(l2==NULL) //if(l1)
+      temp->next = l1;                          
+      if(l1==NULL) //if(l2)
+      temp->next = l2;
+
+      return l3->next; 
+}
+};
+
+
+         // 😉😉😉😉Please upvote if it helps 😉😉😉😉    
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) 
+    {
+        // make another list l3
+        ListNode *l3 = new ListNode();   
+        // store it in temp so as to further change
+        ListNode *temp= l3;
+
+       // till the list doesn't reaches NULL
+      while(l1 && l2)  
+      {                                
+        if(l1->val < l2->val)
+        {
+            temp->next = l1;
+            l1=l1->next;
+        }
+        else
+        {
+            temp->next=l2;
+            l2=l2->next;
+        }
+        temp=temp->next;
+        
+    }
+      //if l2 or l1  is null then it means the other list is answer
+      if(l2==NULL) //if(l1)
+      temp->next = l1;                          
+      if(l1==NULL) //if(l2)
+      temp->next = l2;
+
+      return l3->next; 
+}
+};
+
+
+			
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+       
+        if(l1 == NULL)
+            return l2;
+
+        if(l2 == NULL)
+            return l1;
+  
+        ListNode * l3 = l1;
+        if(l1 -> val > l2 -> val)
+        {
+            l3 = l2;
+            l2 = l2 -> next;
+        }
+        else
+        {
+            l1 = l1 -> next;
+        }
+        ListNode *curr = l3;
+        
+	
+        while(l1 &&  l2)
+        {
+            if(l1 -> val < l2 -> val){
+                curr->next = l1;
+                l1 = l1 -> next;
+            }
+            else{
+                curr->next = l2;
+                l2 = l2 -> next;
+            }
+            curr = curr -> next;
+                
+        }
+	
+        if(!l1)
+            curr -> next = l2;
+        else
+            curr -> next = l1;
+            
+        return l3;
+       
+    }
+};
