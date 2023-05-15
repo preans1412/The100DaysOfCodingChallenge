@@ -1,0 +1,32 @@
+
+202. Happy Number
+https://leetcode.com/problems/happy-number/description/
+
+
+class Solution {
+public:
+     int smile(int n)
+       {
+          int  ans=0;
+           while(n>0)
+           {
+               ans+=(n%10)*(n%10);
+               n/=10;
+           }
+           return ans;
+       }
+
+       
+    bool isHappy(int num)
+     {
+       int slow=num;
+       int fast=num;
+       do{
+           slow=smile(slow);
+           fast=smile(smile(fast));
+       } 
+       while(slow!=fast);
+       return slow==1;
+       
+    }
+};
