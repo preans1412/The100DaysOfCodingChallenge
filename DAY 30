@@ -1,0 +1,27 @@
+Day 30 of #100daysofcodechallenge
+2418. Sort the People
+Easy ✅
+Link for the Question -https://lnkd.in/dv-U65c8
+
+
+
+class Solution {
+    public String[] sortPeople(String[] names, int[] heights) 
+    {
+        HashMap<Integer,String> map = new HashMap<>();
+        for(int i=0;i<heights.length;i++)
+        {
+            map.put(heights[i],names[i]); 
+        }
+        Arrays.sort(heights); //inbuilt function in java
+        String  ans[] = new String[heights.length];
+        int cnt=0;
+        for(int i=heights.length-1;i>=0;i--)
+        {
+          ans[cnt]=map.get(heights[i]);
+          cnt++;
+        }
+
+         return ans;
+    }
+}
