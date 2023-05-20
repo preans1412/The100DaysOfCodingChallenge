@@ -1,0 +1,54 @@
+Day 31 of #100daysofcodechallenge
+1365. How Many Numbers Are Smaller Than the Current Number
+Easy ✅
+Link for the Question -https://lnkd.in/dZF4hjS8
+
+------ JAVA ----------
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums)
+     {
+         int n=nums.length;
+         int b[] =new int[n]; 
+         int cnt=0;
+         for(int i=0;i<n;i++)
+         {
+             for( int j=0;j<n;j++) 
+             {
+                 if(nums[i]>nums[j])
+                 {
+                    cnt++;
+                 }
+             }
+             b[i]=cnt;
+             cnt=0;
+         }
+         return b; 
+    }
+}
+
+
+
+
+
+-----------C++ -----------
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums)
+     {
+         int n=nums.length;
+         int b[] =new int[n]; 
+         int cnt=0;
+         for(int i=0;i<n;i++)
+         {
+             for( int j=0;j<n;j++) 
+             {
+                 if(nums[i]>nums[j])
+                 {
+                    cnt++;
+                 }
+             }
+             b[i]=cnt;
+             cnt=0;
+         }
+         return b; 
+    }
+}
