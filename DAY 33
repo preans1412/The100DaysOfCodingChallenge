@@ -1,0 +1,33 @@
+Day 33 of #100daysofcodechallenge
+
+1. Two Sum
+
+Easy ✅
+
+Link for the Question - https://leetcode.com/problems/two-sum/description/
+
+GitHub: https://lnkd.in/d6JZGn6P
+
+class Solution
+ {
+    public int[] twoSum(int[] nums, int target) 
+    {
+        int n= nums.length;
+         for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+               int sum = nums[i]+ nums[j];
+              
+               if (nums[j] == target - nums[i]) 
+               {
+                    return new int[] { i, j };
+             }
+        }     
+        }
+        return null  ;
+    }
+  }   
+   
+        
+
